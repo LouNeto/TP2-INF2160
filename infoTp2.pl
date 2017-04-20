@@ -19,7 +19,6 @@
 % question(P, _, _, Zebre, _, _).
 % question(P, C, N, A, B, M).
 
-
 %faits!
 meme(anglais, rouge).
 meme(chien, espagnol).
