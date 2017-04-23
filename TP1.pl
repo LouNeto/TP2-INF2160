@@ -11,12 +11,6 @@
 %   B = [jus_orange, the, cafe, lait, eau],
 %   M = [kiwi, celeri, wasabi, litchi, poire].
 
-Rue = [maison(1,_,_,_,_,_),
-       maison(2,_,_,_,_,_),
-       maison(3,_,_,_,_,_),
-       maison(4,_,_,_,_,_),
-       maison(5,_,_,_,_,_)].
-
 main :-
   composition(Rue).
 
