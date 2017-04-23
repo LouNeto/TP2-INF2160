@@ -11,32 +11,73 @@
 %   B = [jus_orange, the, cafe, lait, eau],
 %   M = [kiwi, celeri, wasabi, litchi, poire].
 
+Rue = [maison(1,_,_,_,_,_),
+       maison(2,_,_,_,_,_),
+       maison(3,_,_,_,_,_),
+       maison(4,_,_,_,_,_),
+       maison(5,_,_,_,_,_)].
 
 main :-
   composition(Rue).
 
 composition(Rue) :-
 
-  Rue = [[1, _, _, _, _, _],
-         [2, _, _, _, _, _],
-         [3, _, _, _, _, _],
-         [4, _, _, _, _, _],
-         [5, _, _, _, _, _]],
+  Rue = [maison(1,_,_,_,_,_),
+         maison(2,_,_,_,_,_),
+         maison(3,_,_,_,_,_),
+         maison(4,_,_,_,_,_),
+         maison(5,_,_,_,_,_)],
 
-         write_maisons(Rue).
+  write_maisons(Rue).
 
 write_maisons([]).
 write_maisons([H|T]) :-
   write(H), nl,
   write_maisons(T).
 
-memeMaison([]).
-memeMaison(X,Y,[H|T]) :-
-  meme(X,Y),
-  member(X,H),
-  member(Y,H),
-  memeMaison(X,Y,T).
+% maison(P,C,N,A,B,M) :-
+%   couleur(C),
+%   nationalite(N),
+%   animaux(A),
+%   brevage(B),
+%   mets(M).
 
+% memeMaison([]).
+% memeMaison(X,Y,[H|T]) :-
+%   meme(X,Y),
+%   member(X,H),
+%   member(Y,H),
+%   memeMaison(X,Y,T).
+
+% couleur(rouge),
+% couleur(jaune),
+% couleur(bleu),
+% couleur(verte),
+% couleur(ivoire),
+%
+% nationalite(anglais),
+% nationalite(espagnol),
+% nationalite(norvegien),
+% nationalite(ukrainien),
+% nationalite(canadien),
+%
+% animaux(chien),
+% animaux(renard),
+% animaux(serpent),
+% animaux(cheval),
+% animaux(zebre),
+%
+% brevage(jus_orange),
+% brevage(the),
+% brevage(cafe),
+% brevage(lait),
+% brevage(eau),
+%
+% mets(kiwi),
+% mets(celeri),
+% mets(wasabi),
+% mets(litchi),
+% mets(poire),
 
 meme( anglais, rouge ).
 meme( chien, espagnol ).
