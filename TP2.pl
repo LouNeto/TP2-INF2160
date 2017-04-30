@@ -1,3 +1,7 @@
+% TP2 dans le cadre du cours INF2160
+% Lou-Gomes Neto et Pier-Olivier Decoste
+% NETL14039105, DECP09059005
+
 rue :-
   length(Maisons, 5),
     Maisons = [question(1, _, _, _, _, _),
@@ -16,8 +20,6 @@ rue :-
   member(question(_, verte, _, _, cafe, _), Maisons),
   member(question(3, _, _, _, lait, _), Maisons),
   member(question(2, bleu, _, _, _, _), Maisons),
-  member(question(4, _, _, _, _, _), Maisons),
-  member(question(5, _, _, _, _, _), Maisons),
   member(question(_, _, _, zebre, _, _), Maisons),
   member(question(_, _, _, _, eau, _), Maisons),
   member(question(_, ivoire, _, _, _, _), Maisons),
