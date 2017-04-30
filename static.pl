@@ -1,25 +1,4 @@
-position(1). position(2). position(3). position(4). position(5).
-
-couleur(rouge). couleur(jaune). couleur(bleu). couleur(verte). couleur(ivoire).
-
-nationalite(anglais). nationalite(espagnol). nationalite(norvegien).
-nationalite(ukrainien). nationalite(canadien).
-
-animaux(chien). animaux(renard). animaux(serpent). animaux(cheval). animaux(zebre).
-
-brevage(jus_orange). brevage(the). brevage(cafe). brevage(lait). brevage(eau).
-
-mets(kiwi). mets(celeri). mets(wasabi). mets(litchi). mets(poire).
-
-voisin( celeri, renard ). voisin( norvegien, bleu ).
-voisin( kiwi, cheval ). voisin( verte, ivoire ).
-
-droite( verte, ivoire ).
-
-question(P,C,N,A,B,M) :-
-  rue(Maison).
-
-rue(Maisons) :-
+rue :-
   length(Maisons, 5),
     Maisons = [question(1, _, _, _, _, _),
                question(2, _, _, _, _, _),
@@ -46,10 +25,11 @@ rue(Maisons) :-
   nextto(question(_, ivoire, _, _, _, _), question(_, verte, _, _, _, _), Maisons),
   nextto(question(_, _, _, renard, _, _), question(_, _, _, _, _, celeri), Maisons),
   nextto(question(_, _, _, _, _, kiwi), question(_, _, _, cheval, _, _), Maisons),
-  afficherMaisons(Maisons).
+  creerMaisons(Maisons).
 
+creerMaisons([]).
+creerMaisons([X|XS]) :-
+  assert(X),
+  creerMaisons(XS).
 
-afficherMaisons([]).
-afficherMaisons([X|XS]) :-
-  write(X), nl,
-  afficherMaisons(XS).
+:- rue.
