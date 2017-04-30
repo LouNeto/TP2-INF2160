@@ -9,6 +9,7 @@ rue :-
                question(3, _, _, _, _, _),
                question(4, _, _, _, _, _),
                question(5, _, _, _, _, _)],
+  % Application des indices sur la liste des maisons.
   member(question(_, rouge, anglais, _, _, _), Maisons),
   member(question(_, _, espagnol, chien, _, _), Maisons),
   member(question(1, _, norvegien, _, _, _), Maisons),
@@ -29,9 +30,11 @@ rue :-
   nextto(question(_, _, _, _, _, kiwi), question(_, _, _, cheval, _, _), Maisons),
   creerMaisons(Maisons).
 
+% Assert pour creer les faits sur les maisons.
 creerMaisons([]).
 creerMaisons([X|XS]) :-
   assert(X),
   creerMaisons(XS).
 
+% Pour ajouter les maisons a la structure de la BC.
 :- rue.
